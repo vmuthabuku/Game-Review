@@ -1,2 +1,2 @@
 # Game-Review
-A node js api that uses express, mongo-db
+A javascript app that uses express, mongo-db and react js
