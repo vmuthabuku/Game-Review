@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Loader, Dimmer } from 'semantic-ui-react'
 import { Oauth } from '../../actions'
 
-export default function(ComposedClass){
+export default function(ComposedClass, reload){
     class Auth extends Component {
 
         state = {
@@ -14,7 +14,21 @@ export default function(ComposedClass){
             this.props.dispatch(Oauth())
         }
         componentWillReceiveProps(nextProps){
-            console.log(nextProps)
+            this.setState({loading:false})
+
+            if(!nextProps.user.login.isAuth){
+                if(reload){
+                    this.props.history.push('/login')
+                }
+               
+            }
+            else{
+            if(reload===false){
+                this.props.history.push("/user")
+            }
+                
+            }
+
         }
 
         render() {
@@ -24,7 +38,7 @@ export default function(ComposedClass){
                
             }
             return (
-           <ComposedClass {...this.props}/>
+           <ComposedClass {...this.props} user={this.props.user}/>
             )
         }
         }

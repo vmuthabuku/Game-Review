@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../actions'
-import { Button, Form, Grid, Header,Segment,  Message,} from 'semantic-ui-react'
+import { Button, Form, Grid, Header,  Message,} from 'semantic-ui-react'
 
 class Login extends Component {
 
@@ -76,9 +76,9 @@ class Login extends Component {
                     </Message>
                     {
                         user.login ? 
-                        <Segment inverted color='red' >
+                        <Message color='red' >
                             {user.login.message}
-                        </Segment>
+                        </Message>
                         :null
                     }
                 </Grid.Column>
