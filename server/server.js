@@ -44,8 +44,9 @@ app.post("/api/game", (req, res) => {
     game.save((err, doc) => {
         if (err) return res.status(400).send(err);
         res.status(200).json({
-            post: true,
-            gameId: doc._id
+            success: true,
+            gameId: doc._id,
+            post:doc
         })
 
     })

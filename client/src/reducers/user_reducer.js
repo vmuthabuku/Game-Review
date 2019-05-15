@@ -9,6 +9,11 @@
                     ...state, 
                     login:action.payload
                 }
+        case "ALL_USER_POST":
+                return {
+                    ...state,
+                    listall:action.payload 
+                }
          default:
             return state;
      }

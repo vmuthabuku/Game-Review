@@ -13,6 +13,13 @@ export default function(state={},action){
                     game:action.payload.game,
                     reviewer:action.payload.reviewer
                 }
+        case "ADD_GAME":
+                return {
+                    ...state,
+                    newgame:action.payload,
+
+
+                }
         default:
            return state;
     }

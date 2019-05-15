@@ -78,3 +78,19 @@ export function Oauth(){
     }
 }
 
+export function addReview(game){
+    const request = axios.post('/api/game',game)
+                    .then(response => response.data)
+    return {
+        type:"ADD_GAME",
+        payload:request
+    }
+}
+export function getUserPosts(userId){
+    const request = axios.get(`/api/user_posts?users=${userId}`)
+                    .then(response => response.data)
+    return {
+        type:"ALL_USER_POST",
+        payload:request
+    }
+}
